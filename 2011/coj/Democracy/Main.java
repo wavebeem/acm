@@ -1,39 +1,28 @@
-import java.io.*;
-import java.util.*;
 
-class Main {
-    public static void main(String [] args) {
-        Scanner s = new Scanner(System.in);
-        int groups = s.nextInt();
+package democracy;
 
-        ArrayList<Integer> nums = new ArrayList<Integer>();
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.Collections;
 
-        for (int i = 0; i < groups; i++) {
-            nums.add(Integer.valueOf(s.next()));
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner inp = new Scanner(System.in);
+
+        int numGroups = inp.nextInt();
+
+        ArrayList<Integer> groups = new ArrayList();
+        for (int i=0; i<numGroups; i++) {
+            groups.add(inp.nextInt());
         }
 
-        int halfGroups = half(nums.size()); // minimum # of groups
-        int sum = 0;
-        for (int i = 0; i < halfGroups; i++) {
-            Integer n = minimum(nums);
-            nums.remove(n);
-            sum += half(n); 
-        }
+        Collections.sort(groups);
+        Integer total = 0;
+        for (int i=0; i<(groups.size()/2)+1; i++)
+            total += (groups.get(i)/2)+1;
 
-        System.out.println(sum);
+        System.out.println(total);
     }
 
-    private static int half(int n) {
-        return n / 2 + 1;
-    }
-
-    private static Integer minimum(ArrayList<Integer> ary) {
-        int min = 10001;
-        for (Integer a : ary) {
-            if (a < min) {
-                min = a;
-            }
-        }
-        return min;
-    }
-} 
+}
