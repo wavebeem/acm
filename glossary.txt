@@ -1,0 +1,20 @@
+Sorting an array/collection (ascending order):
+  Arrays.sort(myArray);
+  Collections.sort(myArray);
+
+Sorting an array/collection in descending order:
+  Arrays.sort(myArray, Collections.reverseOrder());
+  Collections.sort(myArray, Collections.reverseOrder());
+
+Returns a copy of an array:
+  Arrays.copyOf(sourceArray, newArrayLength);
+
+Binary search an array/collection (returns index or -1):
+  Arrays.binarySearch(myArray, myKey);
+  Collections.binarySearch(myArray, myKey);
+
+Convert a number to a given output base:
+  Integer.toString(myInt, myRadix);
+
+Convert a number from a given input base:
+  Integer.parseInt(myString, myRadix);

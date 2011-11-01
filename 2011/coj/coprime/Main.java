@@ -10,7 +10,7 @@ public class Main {
         int count = 0;
 
         for (int i=0; i < n; i++) {
-            count += gcd(i, n) ? 1 : 0;
+            count += gcd(i, n) == 1 ? 1 : 0;
         }
 
         return count;

@@ -8,17 +8,17 @@ public class Main {
     public static int calcSize(int x, int y, int size) {
         boolean ok = true;
         if (x+size >= mapSize || y+size >= mapSize)
-            return size - 1;
+            return size;
 
-        for (int i=x; i < x+size; i++) {
-            for (int j=y; j < y+size; j++) {
+        for (int i=x; i <= x+size; i++) {
+            for (int j=y; j <= y+size; j++) {
                 if (map[j][i] == '#') {
                     ok = false;
                 }
             }
         }
 
-        return !ok? size - 1: calcSize(x, y, size + 1);
+        return !ok? size: calcSize(x, y, size + 1);
     }
 
     public static char[][] map;
