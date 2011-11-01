@@ -1,23 +1,40 @@
-import java.util.*;
 
+package bamboo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Trevor
+ */
 public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int    times = in.nextInt();
-        double sum   = 0.0;
+        int numOfArgs = scanner.nextInt();
 
-        for (int i=0; i < times; i++) {
-            double H = in.nextDouble();
-            double D = in.nextDouble();
+        double h;
+        double d;
+        double answer;
+        double sum = 0.0;
 
-            double a = ((D*D) - (H*H))/(-2*H);
+        for(int i = 0; i < numOfArgs;i++){
+            h = scanner.nextDouble();
+            d = scanner.nextDouble();
 
-            System.out.printf("%.1f\n", a);
+            answer = h-((Math.pow(h, 2)+Math.pow(d, 2))/(2*h));
+           
+            answer = new Double( Math.round(answer*10))/10;//answer - (answer%1))/10;
+            sum += answer;
 
-            sum += a;
+            System.out.println(answer);
         }
+        sum = new Double( Math.round(sum/numOfArgs*10))/10;//answer - (answer%1))/10;
 
-        System.out.printf("%.1f\n", sum / times);
+        System.out.println(sum);
     }
 }
