@@ -1,2 +1,0 @@
-all:
-	javac Main.java
