@@ -1,0 +1,37 @@
+description
+
+Johan wants to build a new house and he wants his house as large as it can. Given an N x N grid land, find the largest square size that fit in the free area.
+
+input specification
+
+The first line of input contains an integer T, the number of test cases follow. Each test case starts with an integer N (1 <= N <= 10) denoting the size of the grid land. The next N lines each contains N characters. Each character be either '.' (free area) or '#' (obstacle). Your house should be build on free area.
+
+output specification
+
+For each test case, output in a line the size of the largest square on free area.
+
+sample input
+
+2
+10
+..........
+.#####....
+..#..###..
+...##.....
+...#..#...
+...#...###
+....######
+..........
+##########
+#########.
+5
+##..#
+....#
+.#..#
+####.
+.#..#
+
+sample output
+
+3
+2

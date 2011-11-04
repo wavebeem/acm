@@ -1,0 +1,24 @@
+description
+
+Transform the algebraic expression with brackets into RPN form (Reverse Polish Notation). Two-argument operators: +, -, *, /, ^ (priority from the lowest to the highest), brackets ( ). Operands: only letters: a,b,...,z. Note that the resulting expression must be evaluated from right to left, that is, a+b+c must be evaluated as c+b+a, but respecting the priorities of operators.
+
+input specification
+
+t [the number of expressions <= 100] expression [length <= 400] [other expressions] Text grouped in [ ] does not appear in the input file.
+
+output specification
+
+The expressions in RPN form, one per line, ready to be evaluated from right to left.
+
+sample input
+
+3
+(a+b*c)
+((a+b)*(z+x))
+((a+t)*((b+a+c)^(c+d)))
+
+sample output
+
+abc*+
+ab+zx+*
+at+bac++cd+^*
